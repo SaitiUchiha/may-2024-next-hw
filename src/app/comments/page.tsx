@@ -1,10 +1,23 @@
 import React from "react";
+import {commentService} from "@/services/api.services";
+import CommentComponent from "@/components/CommentComponent";
+import {IComment} from "../../../models/type";
 
 
-const CommentsPage = () => {
+const CommentsPage = async () => {
+    const allComments = await commentService.getAllComments();
+
+
     return (
         <div>
-            comments page
+            <ul>
+                {
+                    allComments.map((comment:IComment) => (<li key={comment.id}>
+                        <CommentComponent comment={comment}/>
+                    </li>))
+                }
+            </ul>
+
         </div>
 
     )

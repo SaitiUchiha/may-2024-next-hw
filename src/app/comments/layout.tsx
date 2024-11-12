@@ -2,21 +2,19 @@ import {Metadata} from "next";
 import {ReactNode} from "react";
 
 export const metadata:Metadata = {
-    title: "UsersLayout metadata",
+    title: "CommentsLayout metadata",
 }
 
 type Props = {
     children: ReactNode
 }
 
-const  UsersLayout= ({children}:Props) => {
+const  CommentsLayout= ({children}:Props) => {
   return (
       <div>
-          UsersLayout start
           {children}
-          UsersLayout end
       </div>
   )
 };
 
-export default UsersLayout;
+export default CommentsLayout;
