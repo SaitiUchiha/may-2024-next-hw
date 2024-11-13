@@ -7,7 +7,7 @@ export type Params ={
 }
 
 const  UserPage= async ({params}:Params) => {
-  const user:IUser|null = await userService.getUserById(params.id);
+  const user:IUser = await userService.getUserById(params.id);
     return (
         <div>
             <h2>{user?.id} {user?.name}</h2>

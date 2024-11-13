@@ -8,12 +8,12 @@ export type Params ={
 }
 
 const  PostPage= async ({params}:Params) => {
-  const post:IPost|null = await postService.getPostById(params.id);
+  const post:IPost = await postService.getPostById(params.id);
     return (
         <div>
-            <h3>User Id {post?.userId}</h3>
-            <h2>{post?.id} {post?.title}</h2>
-            <p>{post?.body}</p>
+            <h3>User Id {post.userId}</h3>
+            <h2>{post.id} {post.title}</h2>
+            <p>{post.body}</p>
         </div>
 
     )
